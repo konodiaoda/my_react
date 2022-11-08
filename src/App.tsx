@@ -5,7 +5,7 @@ function App() {
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Todolist/>
+            <Todolist />
         </StyledEngineProvider>
     );
 }

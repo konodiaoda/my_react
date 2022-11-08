@@ -1,13 +1,13 @@
 import React from "react";
 import todoLogo from "../assets/todoLogo.svg";
-import {header} from "../styles/Header"
+import { ToDoHeader } from "../styles/HeaderStyles";
 
 const Header = () => {
-	return (
-		<header className={header}>
-			<img src={todoLogo} alt="WebSite Logo" />
-		</header>
-	);
-}
+    return (
+        <ToDoHeader>
+            <img src={todoLogo} alt="WebSite Logo" />
+        </ToDoHeader>
+    );
+};
 
 export default Header;
