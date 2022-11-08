@@ -6,3 +6,8 @@ export interface ITask {
 export interface TaskSate{
 	tasks?: ITask[];
 }
+export interface IListItemProps {
+	content?: string;
+	taskId?: string;
+	isDone?: boolean;
+}

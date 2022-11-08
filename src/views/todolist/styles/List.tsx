@@ -13,11 +13,12 @@ export const list = styled.div`
 
 export const listHeader = styled.header`
   width: 100%;
-  > form{
+
+  > form {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    @media (max-width: 768px){
+    @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
     }
@@ -33,10 +34,12 @@ export const listInputNewTask = styled.input`
   color: var(--gray-100);
   border: 1px solid transparent;
   transition: border 0.2s;
-  ::placeholder{
+
+  ::placeholder {
     color: var(--gray-300);
   }
-  :focus{
+
+  :focus {
     border: 1px solid var(--purple-700);
   }
 `
@@ -57,10 +60,12 @@ export const listButtonNewTask = styled.button`
   line-height: 1.4;
   border: 0;
   transition: background 0.2s;
-  :hover{
+
+  :hover {
     background: var(--blue-400);
   }
-  @media (max-width: 768px){
+
+  @media (max-width: 768px) {
     width: 100%;
   }
 `
