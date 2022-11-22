@@ -1,15 +1,18 @@
-import { configureStore } from "@reduxjs/toolkit";
-import {TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import todoSlice from "@/views/todolist/features/taskSlice"
+import {ObservableTodoStore} from "@/views/todolist/features/ObservableTodoStore";
+import React, {useContext} from "react";
+import {configure} from "mobx";
 
-export const store = configureStore({
-    reducer: {
-        taskSate : todoSlice
-    }
-});
+configure({
+	enforceActions: "observed",
+})
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+class RootStore{
+	 public observableTodoStore: ObservableTodoStore;
 
-export const useAppDispatch = () => useDispatch<AppDispatch>();
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+	constructor() {
+		this.observableTodoStore = new ObservableTodoStore();
+	}
+}
+
+const store = new RootStore();
+export const useStore = () => useContext(React.createContext(store));

@@ -1,23 +1,15 @@
-import {IListItemProps, ITask} from "@/views/todolist/interface/Task";
-import {ListItemDIV, ListItemToggle} from "@/views/todolist/styles/ListItemStyles";
-import {useAppDispatch, useAppSelector} from "@/store";
-import {shallowEqual} from "react-redux";
-import {sortByIsDone} from "@/views/todolist/components/List";
-import {deleteTask, selectTask} from "@/views/todolist/features/taskSlice";
+import {IListItemProps} from "@/views/todolist/interface/Task";
+import {ListItemDeleteButton, ListItemDIV, ListItemToggle, TodoContent} from "@/views/todolist/styles/ListItemStyles";
+import {useStore} from "@/store";
 
 export const ListItem = ({ taskId, content, isDone }: IListItemProps) => {
-    const taskLists = useAppSelector(state => state.taskSate, shallowEqual);
-    const dispatch = useAppDispatch();
+    const {observableTodoStore} = useStore()
     const handleDeleteTask = () => {
-        dispatch(deleteTask(taskId)) ;
+        observableTodoStore.deleteTask(taskId);
     };
 
     const handleSelectTask = () => {
-        const newTasksArray = taskLists.tasks.map((task: ITask) => {
-            if (task.id === taskId) task.isDone = !task.isDone;
-            return task;
-        });
-        dispatch(selectTask(sortByIsDone(newTasksArray))) ;
+        observableTodoStore.selectTask(taskId)
     };
 
     return (
@@ -25,6 +17,12 @@ export const ListItem = ({ taskId, content, isDone }: IListItemProps) => {
             <ListItemToggle onClick={handleSelectTask}>
                 {isDone ? "111" : null}
             </ListItemToggle>
+            <TodoContent>
+                {content}
+            </TodoContent>
+            <ListItemDeleteButton onClick={handleDeleteTask}>
+
+            </ListItemDeleteButton>
         </ListItemDIV>
     );
 };

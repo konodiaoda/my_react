@@ -21,3 +21,22 @@ export const ListItemToggle = styled.button`
     cursor: pointer;
     border-radius: 999px;
 `;
+export const TodoContent = styled.p`
+  grid-area: toggle;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  border-radius: 999px;
+`
+export const ListItemDeleteButton = styled.button`
+  grid-area: delete;
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  transition: color 0.2s;
+  :hover {
+    color: var(--red-500);
+  }
+`

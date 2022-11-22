@@ -1,6 +1,5 @@
-import { useAppSelector } from "@/store";
+
 import { ITask } from "@/views/todolist/interface/Task";
-import { shallowEqual } from "react-redux";
 import {
     EmptyListDIV,
     ListContentDIV,
@@ -9,11 +8,14 @@ import {
     ListItemsContainer
 } from "@/views/todolist/styles/ListContentStyles";
 import {ListItem} from "@/views/todolist/components/ListItem";
+import {useStore} from "@/store";
+import {observer} from "mobx-react";
 
-const ListContent = () => {
-    const taskLists = useAppSelector(state => state.taskSate, shallowEqual);
+const ListContent = observer(() => {
+    const {observableTodoStore} = useStore()
+    const taskLists = observableTodoStore.initialState;
     const createdTasksCount = taskLists.tasks.length;
-    const doneTasksCount = taskLists.tasks?.filter((task: ITask) => task.isDone).length;
+    const doneTasksCount = taskLists.tasks.filter((task: ITask) => task.isDone).length;
     return (
         <ListContentDIV>
             <ListContentHeader>
@@ -39,5 +41,5 @@ const ListContent = () => {
             )}
         </ListContentDIV>
     );
-};
+});
 export default ListContent;
