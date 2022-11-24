@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const ListItemDIV = styled.div`
     display: flex;
@@ -14,20 +14,49 @@ export const ListItemDIV = styled.div`
         margin-top: 0.75rem;
     }
 `;
-export const ListItemToggle = styled.button`
-    grid-area: toggle;
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    border-radius: 999px;
-`;
-export const TodoContent = styled.p`
-  grid-area: toggle;
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  border-radius: 999px;
-`
+
+const ListItemToggleCommonStyles = `grid-area: toggle;
+                                    width: 22px;
+                                    height: 22px;
+                                    cursor: pointer;
+                                    border-radius: 999px;`
+
+export const ListItemToggle = styled.button<{ $isDone: boolean }>`
+  ${(props) => {
+    if (props.$isDone) {
+      return css`
+        ${ListItemToggleCommonStyles};
+        border: 2px solid var(--blue-400);
+        background: none;
+      `
+    } else {
+      return css`
+        ${ListItemToggleCommonStyles};
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray-100);
+        border: 3px solid var(--purple-700);
+        background: var(--purple-700);`
+    }}}`;
+
+const TodoContentCommonStyles = `grid-area: text;
+                                 width: 90%;
+                                 text-align: justify;
+                                 color: var(--gray-100);`
+
+export const TodoContent = styled.p<{ $isDone: boolean }>`
+  ${(props) => {
+    if (props.$isDone) {
+      return css`
+        ${TodoContentCommonStyles};
+        text-decoration-line: line-through;
+        color: var(--gray-300);
+      `
+    } else {
+      return css`
+        ${TodoContentCommonStyles};`
+    }}}`;
 export const ListItemDeleteButton = styled.button`
   grid-area: delete;
   display: flex;

@@ -14,10 +14,9 @@ export const ListItem = ({ taskId, content, isDone }: IListItemProps) => {
 
     return (
         <ListItemDIV>
-            <ListItemToggle onClick={handleSelectTask}>
-                {isDone ? "111" : null}
+            <ListItemToggle  onClick={handleSelectTask} $isDone={isDone}>
             </ListItemToggle>
-            <TodoContent>
+            <TodoContent $isDone={isDone}>
                 {content}
             </TodoContent>
             <ListItemDeleteButton onClick={handleDeleteTask}>
