@@ -1,5 +1,5 @@
 import React from "react";
-import todoLogo from "../assets/todoLogo.svg";
+import todoLogo from "@/assets/logos/todoLogo.svg";
 import { ToDoHeader } from "../styles/HeaderStyles";
 
 const Header = () => {

@@ -1,4 +1,3 @@
-
 import { ITask } from "@/views/todolist/interface/Task";
 import {
     EmptyListDIV,
@@ -7,12 +6,12 @@ import {
     ListDoneTaskCounter,
     ListItemsContainer
 } from "@/views/todolist/styles/ListContentStyles";
-import {ListItem} from "@/views/todolist/components/ListItem";
-import {useStore} from "@/store";
-import {observer} from "mobx-react";
+import { ListItem } from "@/views/todolist/components/ListItem";
+import { useStore } from "@/store";
+import { observer } from "mobx-react";
 
 const ListContent = observer(() => {
-    const {observableTodoStore} = useStore()
+    const { observableTodoStore } = useStore();
     const taskLists = observableTodoStore.initialState;
     const createdTasksCount = taskLists.tasks.length;
     const doneTasksCount = taskLists.tasks.filter((task: ITask) => task.isDone).length;
@@ -29,7 +28,7 @@ const ListContent = observer(() => {
             </ListContentHeader>
             {taskLists.tasks.length === 0 ? (
                 <EmptyListDIV>
-                    <strong>You don't have any tasks registered yet.</strong>
+                    <strong>You don&apos;t have any tasks registered yet.</strong>
                     <p>Create tasks and organize your to-do items</p>
                 </EmptyListDIV>
             ) : (
