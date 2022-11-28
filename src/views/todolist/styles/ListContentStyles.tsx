@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { blue, gray, purple } from "@/constant/colorConstant";
 
 export const ListContentDIV = styled.div`
     width: 100%;
@@ -29,7 +30,7 @@ export const listCreatedTaskCounter = styled.div`
     font-size: 0.875rem;
     line-height: 1.7;
     font-weight: bold;
-    color: var(--blue-400);
+    color: ${blue.blue_400};
 
     > span {
         width: 2rem;
@@ -40,8 +41,8 @@ export const listCreatedTaskCounter = styled.div`
         justify-content: center;
         align-items: center;
         font-size: 0.75rem;
-        background: var(--gray-400);
-        color: var(--gray-200);
+        background: ${gray.gray_400};
+        color: ${gray.gray_200};
     }
 `;
 
@@ -53,7 +54,7 @@ export const ListDoneTaskCounter = styled.div`
     font-size: 0.875rem;
     line-height: 1.7;
     font-weight: bold;
-    color: var(--purple-400);
+    color: ${purple.purple_400};
 
     > span {
         width: fit-content;
@@ -65,8 +66,8 @@ export const ListDoneTaskCounter = styled.div`
         justify-content: center;
         align-items: center;
         font-size: 0.75rem;
-        background: var(--gray-400);
-        color: var(--gray-200);
+        background: ${gray.gray_400};
+        color: ${gray.gray_200};
     }
 `;
 
@@ -75,14 +76,14 @@ export const EmptyListDIV = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--gray-300);
+    color: ${gray.gray_300};
     font-size: 1rem;
     line-height: 1.4;
     text-align: center;
 
     > svg {
         margin-bottom: 1rem;
-        color: var(--gray-400);
+        color: ${gray.gray_400};
     }
 `;
 

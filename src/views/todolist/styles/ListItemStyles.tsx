@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
+import { gray, purple, red } from "@/constant/colorConstant";
 
 export const ListItemDIV = styled.div`
     display: flex;
     align-items: flex-start;
-    background: var(--gray-400);
+    background: ${gray.gray_400};
     gap: 0.75rem;
     border: 1px solid #333333;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -35,9 +36,9 @@ export const ListItemToggle = styled.button<{ $isDone: boolean }>`
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: var(--gray-100);
-                border: 3px solid var(--purple-700);
-                background: var(--purple-700);
+                color: ${gray.gray_100};
+                border: 3px solid ${purple.purple_700};
+                background: ${purple.purple_700};
             `;
         }
     }}
@@ -54,7 +55,7 @@ export const TodoContent = styled.p<{ $isDone: boolean }>`
             return css`
                 ${TodoContentCommonStyles};
                 text-decoration-line: line-through;
-                color: var(--gray-300);
+                color: ${gray.gray_300};
             `;
         } else {
             return css`
@@ -68,10 +69,10 @@ export const ListItemDeleteButton = styled.button`
     display: flex;
     background-color: transparent;
     border: 0;
-    color: var(--gray-300);
+    color: ${gray.gray_300};
     cursor: pointer;
     transition: color 0.2s;
     :hover {
-        color: var(--red-500);
+        color: ${red.red_500};
     }
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { blue, gray, purple } from "@/constant/colorConstant";
 
 export const ListDIV = styled.div`
     width: 100%;
@@ -28,7 +29,7 @@ export const ListHeader = styled.header`
 export const ListInputNewTask = styled.input`
     /* flex-grow: 1; */
     width: 100%;
-    background: var(--gray-500);
+    background: ${gray.gray_500};
     padding: 1rem;
     border-radius: 8px;
     color: var(--gray-100);
@@ -36,11 +37,11 @@ export const ListInputNewTask = styled.input`
     transition: border 0.2s;
 
     ::placeholder {
-        color: var(--gray-300);
+        color: ${gray.gray_300};
     }
 
     :focus {
-        border: 1px solid var(--purple-700);
+        border: 1px solid ${purple.purple_700};
     }
 `;
 
@@ -51,9 +52,9 @@ export const ListButtonNewTask = styled.button`
     align-items: center;
     padding: 16px;
     gap: 0.5rem;
-    background: var(--blue-700);
+    background: ${blue.blue_700};
     border-radius: 8px;
-    color: var(--gray-100);
+    color: ${gray.gray_100};
     cursor: pointer;
     font-size: 0.875rem;
     font-weight: bold;
@@ -62,7 +63,7 @@ export const ListButtonNewTask = styled.button`
     transition: background 0.2s;
 
     :hover {
-        background: var(--blue-400);
+        background: ${blue.blue_400};
     }
 
     @media (max-width: 768px) {

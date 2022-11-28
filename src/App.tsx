@@ -1,12 +1,15 @@
-import { CssBaseline, StyledEngineProvider } from "@mui/material";
-import Todolist from "@/views/todolist";
+import {CssBaseline} from "@mui/material";
+import NavigationScroll from "@/layout/NavigationScroll";
+import {Routes} from "react-router-dom";
 
 function App() {
     return (
-        <StyledEngineProvider injectFirst>
-            <CssBaseline />
-            <Todolist />
-        </StyledEngineProvider>
+        <>
+            <CssBaseline/>
+            <NavigationScroll>
+                <Routes/>
+            </NavigationScroll>
+        </>
     );
 }
 

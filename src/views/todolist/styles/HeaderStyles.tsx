@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { gray } from "@/constant/colorConstant";
 
 export const ToDoHeader = styled.header`
     width: 100%;
@@ -6,6 +7,6 @@ export const ToDoHeader = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--gray-700);
+    background: ${gray.gray_700};
     padding: 1rem;
 `;

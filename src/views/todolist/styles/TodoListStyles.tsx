@@ -9,8 +9,7 @@ export const WrapperDIV = styled.div`
 `;
 export const ToDoListContent = styled.main`
     width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 200px 1fr;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;

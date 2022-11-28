@@ -26,6 +26,8 @@ const List = observer(() => {
     };
 
     const handleTypeNewTaskText = (event: React.ChangeEvent<HTMLInputElement>) => {
+        debugger;
+        event.target.setCustomValidity("");
         setNewTaskText(event.target.value);
     };
 
@@ -40,10 +42,10 @@ const List = observer(() => {
                         value={newTaskText}
                         required
                         onInvalid={handleNewCommentInvalid}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleTypeNewTaskText(e)}
+                        onChange={e => handleTypeNewTaskText(e)}
                     />
+                    <ListButtonNewTask type="submit">Create</ListButtonNewTask>
                 </form>
-                <ListButtonNewTask type="submit">Create</ListButtonNewTask>
             </ListHeader>
             <ListContent />
         </ListDIV>
